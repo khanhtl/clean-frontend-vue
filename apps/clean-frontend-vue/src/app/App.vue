@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import NxWelcome from './NxWelcome.vue';
+import ProductsList from './ProductsList.vue';
 </script>
 
 <template>
-  <NxWelcome title="clean-frontend-vue" />
+  <ProductsList />
 </template>
