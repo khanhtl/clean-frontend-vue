@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "nx run-many -t serve"
+    "start": "nx run clean-frontend-vue:serve",
+    "build": "nx run clean-frontend-vue:build"
   },
   "private": true,
   "dependencies": {

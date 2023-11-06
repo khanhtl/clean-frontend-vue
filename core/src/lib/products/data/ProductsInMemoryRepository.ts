@@ -1,3 +1,4 @@
+import { UnexpectedError } from './../../common/domain/DataError';
 import { ProductsRepository, Product } from "../domain";
 import { Either, DataError } from "../../common";
 
@@ -7,12 +8,6 @@ const products = [
         image: "https://images-na.ssl-images-amazon.com/images/I/71Y1S1m-QAL._AC_UY879_.jpg",
         title: "Element Blazin LS tee Shirt, Hombre",
         price: 19.95,
-    },
-    {
-        id: "2",
-        image: "https://m.media-amazon.com/images/I/81HnHYik58L._AC_UL640_FMwebp_QL65_.jpg",
-        title: "Element Vertical SS tee Shirt, Hombre",
-        price: 21.95,
     },
     {
         id: "3",
@@ -127,7 +122,11 @@ export class ProductInMemoryRepository implements ProductsRepository {
                         resolve(Either.right(products));
                     }
                 } catch (error) {
-                    resolve(Either.left({ kind: "UnexpectedError", error }));
+                    const dataError: DataError={
+                        kind: 'UnexpectedError',
+                        error: error
+                    }
+                    resolve(Either.left(dataError));
                 }
             }, 100);
         });
