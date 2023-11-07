@@ -1,9 +1,9 @@
 import { DataError, Ploc } from "../../common";
-import { GetProductsUseCase } from "../domain";
+import { IGetProductsUseCase } from "../domain/interface";
 import { productsInitialState, ProductsState } from "./ProductsState";
 
 export class ProductsPloc extends Ploc<ProductsState> {
-    constructor(private getProductsUseCase: GetProductsUseCase) {
+    constructor(private getProductsUseCase: IGetProductsUseCase) {
         super(productsInitialState);
     }
 

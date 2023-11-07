@@ -1,7 +1,7 @@
 import { Either, DataError } from "../../common";
-import { ProductsRepository, Product } from "../domain";
+import { IProductsRepository, Product } from "../domain";
 
-export class ProductFakeStoreRepository implements ProductsRepository {
+export class ProductFakeStoreRepository implements IProductsRepository {
     get(filter?: string): Promise<Either<DataError, Product[]>> {
         return new Promise(async (resolve, _reject) => {
             try {

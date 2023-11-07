@@ -1,12 +1,13 @@
-import { ProductsRepository } from "./ProductsRepository";
-import { Product } from "./Product";
+import { IProductsRepository } from "./interface/ProductsRepository";
+import { Product } from "./entity/Product";
 import { Either } from "../../common/domain/Either";
 import { DataError } from "../../common/domain/DataError";
+import { IGetProductsUseCase } from "./interface/IGetProductsUseCase";
 
-export class GetProductsUseCase {
-    private productRepository: ProductsRepository;
+export class GetProductsUseCase implements IGetProductsUseCase {
+    private productRepository: IProductsRepository;
 
-    constructor(productRepository: ProductsRepository) {
+    constructor(productRepository: IProductsRepository) {
         this.productRepository = productRepository;
     }
 

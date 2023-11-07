@@ -1,6 +1,5 @@
-import { UnexpectedError } from './../../common/domain/DataError';
-import { ProductsRepository, Product } from "../domain";
-import { Either, DataError } from "../../common";
+import { DataError, Either } from "../../common";
+import { IProductsRepository, Product } from "../domain";
 
 const products = [
     {
@@ -107,7 +106,7 @@ const products = [
     },
 ];
 
-export class ProductInMemoryRepository implements ProductsRepository {
+export class ProductInMemoryRepository implements IProductsRepository {
     get(filter?: string): Promise<Either<DataError, Product[]>> {
         return new Promise((resolve, _reject) => {
             setTimeout(() => {
