@@ -1,5 +1,5 @@
-import { DataError } from "../../../common/domain/DataError";
-import { Either } from "../../../common/domain/Either";
+import { DataError } from "../../../common/domain/entity/DataError";
+import { Either } from "../../../common/domain/entity/Either";
 import { Product } from "../entity/Product";
 
 export interface IProductsRepository {

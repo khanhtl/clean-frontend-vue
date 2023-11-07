@@ -9,10 +9,10 @@ onMounted(() => productsPloc.search(''));
 </script>
 
 <template>
-  <template v-if="state.kind === 'LoadingProductsState'">
+  <template v-if="state.kind === 'LoadingState'">
     loading.....
   </template>
-  <template v-if="state.kind === 'LoadedProductsState'">
+  <template v-if="state.kind === 'LoadedState'">
     <div class="d-flex flex-wrap" style="gap: 16px;">
       <div
       style="width: 300px; height: 430px;"
@@ -38,5 +38,5 @@ onMounted(() => productsPloc.search(''));
     </div>
     </div>
   </template>
-  <template v-if="state.kind === 'ErrorProductsState'"> Error..... </template>
+  <template v-if="state.kind === 'ErrorState'"> Error..... </template>
 </template>

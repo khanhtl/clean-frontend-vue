@@ -1,3 +1,4 @@
-export * from './DataError';
-export * from './Either';
-export * from './EitherAsync';
+export * from './entity/DataError';
+export * from './entity/Either';
+export * from './entity/EitherAsync';
+export * from './entity/EntityState';

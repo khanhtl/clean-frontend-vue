@@ -1,6 +1,6 @@
 import { DataError, Ploc } from "../../common";
 import { IGetProductsUseCase } from "../domain/interface";
-import { productsInitialState, ProductsState } from "./ProductsState";
+import { productsInitialState, ProductsState } from "../domain/entity/ProductsState";
 
 export class ProductsPloc extends Ploc<ProductsState> {
     constructor(private getProductsUseCase: IGetProductsUseCase) {
@@ -14,7 +14,7 @@ export class ProductsPloc extends Ploc<ProductsState> {
             error => this.changeState(this.handleError(searchTerm, error)),
             products =>
                 this.changeState({
-                    kind: "LoadedProductsState",
+                    kind: "LoadedState",
                     products,
                     searchTerm,
                 })
@@ -26,7 +26,7 @@ export class ProductsPloc extends Ploc<ProductsState> {
             case "UnexpectedError": {
                 return {
                     searchTerm,
-                    kind: "ErrorProductsState",
+                    kind: "ErrorState",
                     error: "Sorry, an error has ocurred. Please try later again",
                 };
             }
