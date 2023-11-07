@@ -1,4 +1,5 @@
 # CleanFrontendVue
+![clean-frontend-vue](https://github.com/khanhtl/transfer/assets/79636784/b4eeb4ee-65f9-4a1c-9660-64721416dc6a)
 
 <a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
 
